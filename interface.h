@@ -7,6 +7,6 @@
 
 int menu();
 void nomeFile(char *url);
-
+void statusArquivo(int op){
 
 #endif
