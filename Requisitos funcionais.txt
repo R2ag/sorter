@@ -1,0 +1,12 @@
+ORGANIZAÇÃO DE GRUPOS ALEATÓRIOS
+(Versão 2.0)
+
+Requisitos Funcionais:
+1 - Buscar nomes dos alunos atravez dos arquivos de texto;
+    1.1 - A primeira linha do Arquivo deve conter o numero de membros do grupo;
+    1.2 - A segunda linha deve ter uma flag (0 ou 1) indicando se, caso a relação alunos/grupos não seja exata, os grupos deverão ser respectivamente maiores ou menores que o predefinido;
+2 - Definir um critério Aleatório de sorteio;
+    2.1 - Implementar função de prioridade;
+    2.2 - Implementar o projeto usando BST;
+3 - Emitir relatorio txt com cada grupo e seus componentes;
+4 - Criar um menu para controlar as funções;

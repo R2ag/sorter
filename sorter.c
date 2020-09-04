@@ -1,8 +1,6 @@
 //Este Arquivo: sorter.c
 //Neste arquivo se encontram as funções responsaveis por sortear os grupos.
-//Autor: Rafael Lacerda 'RLAG'
-//Data: 17/07/2020
-
+//Data: 04/09/2020
 //////////////////////
 #include "sorter.h"
 #include <unistd.h>
@@ -11,22 +9,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-//Funções já estruturadas
-int menu(){
-  int opcao;
-  do{
-    printf("1 - Listar Alunos\n");
-    printf("2 - Sortear os grupos\n");
-    printf("3 - Sair\n");
-    scanf("%d", &opcao);
-  }while(opcao<1 || opcao>3);
-  return(opcao);
-}
-
-void nomeFile(char *url){
-  printf("Digite o Nome do Arquivo com a lista de alunos: ");
-  scanf("%[^\n]s", url);
-}
 
 //Funções a serem modificadas.
 void enQueue(qu* q, char *newItem, int priorItem){
@@ -50,10 +32,6 @@ void enQueue(qu* q, char *newItem, int priorItem){
 
   }
 }
-
-
-
-
 
 void listarAlunos(char *url){
   FILE *listaAlunos;

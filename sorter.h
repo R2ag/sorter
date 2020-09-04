@@ -16,8 +16,7 @@ typedef struct Data {
     int order;
 }data;
 
-int menu();
-void nomeFile(char *url);
+
 
 
 #endif

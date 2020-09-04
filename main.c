@@ -3,7 +3,7 @@
 
 
 int main(){
-    //Inicia a Fila
+    //Inicia a BST
     node *n;
     createNode(n);
     int opcao;
