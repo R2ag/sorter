@@ -37,17 +37,26 @@ void statusArquivo(int op){
             printf("Erro desconhecido!\n");
     }
 }
+
 void statusLayout(int op){
     switch (op){
         case 0:
-            printf("O Arquivo nao atende as especificacoes desejadas!\n");
+            printf("O arquivo carregado atende as especificacoes!\n");
             printf("Digite o endereco de um arquivo que atenda as especificacoes.\n");
         case 1:
-            printf("O arquivo carregado atende as especificacoes!\n");
+            printf("O Arquivo nao atende as especificacoes desejadas!\n");
+            printf("Valor Invalido para quantidade de alunos por grupo.\n");
+        case 2:
+            printf("O Arquivo nao atende as especificacoes desejadas!\n");
+            printf("Opcao invalida para formato dos grupos.\n");
+        case 3:
+            printf("O Arquivo nao atende as especificacoes desejadas!\n");
+            printf("O arquivo não possui alunos cadastrados.\n");
         default:
             printf("Erro desconhecido!\n");
     }
 }
+
 void printAluno(char *name, int cont){
     if (cont == 0)
         printf("LISTAGEM DE ALUNOS\n\n");

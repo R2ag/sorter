@@ -1,6 +1,5 @@
 /*Este Arquivo: sorter.h*/
 /*Neste arquivo se encontram os prototipos das funções responsaveis por sortear os grupos.*/
-/*Autor: Rafael Lacerda 'RLAG'*/
 /*Data: 17/07/2020*/
 /*----------------------*/
 

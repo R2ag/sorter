@@ -29,7 +29,30 @@ FILE *openFile(){
 
 //Não terminado
 int validador(FILE *arq){
+    int cont = -2;
+    int qtdAlunosGrupos;
+    int flagGrupos;
+    int flagControll = 0;
 
+    fscanf(arq,"%d \n %d", &qtdAlunosGrupos, &flagGrupos);
+    if(qtdAlunosGrupos <= 0){
+        flagControll = 1;
+        return flagControll;
+    }
+
+    if(flagGrupos < 0 && flagGrupos > 1){
+        flagControll = 2;
+        return flagControll;
+    }
+
+    while( (ch=fgetc(arq))!= EOF )
+        if(ch == '\n')
+            cont++;
+    if(cont > 0){
+        flagControll = 3;
+        return flagControll;
+    }
+    return flagControll;
 }
 
 
