@@ -1,28 +1,37 @@
 #include "list.h"
 #include "sorter.h"
-
+#include "interface.h"
+#include "file.h"
 
 int main(){
     //Inicia a BST
     node *n;
     createNode(n);
     int opcao;
-    char urlArquivo[MAX];
-    nomeArquivo(urlArquivo);
-
+    int arquivoValido = 0; //Flag para definir se o arquivo com os alunos está carregado e é valido para a execução
+    FILE *arq;
     do{
-        opcao = menu();
+        opcao = menu(arquivoValido);
+        if (arquivoValido == 0 && (opcao != 1 && opcao != 5)) {
+            alerta();
+            opcao = 0;
+        }
         switch(opcao){
             case 1:
-                listarAlunos(urlArquivo);
+                arq = openFile();
                 break;
             case 2:
-                sortearGrupos(urlArquivo, q);
+                listarAlunos(arq);
                 break;
             case 3:
+
+                break;
+            case 4:
+
+                break;
+            case 5:
                 break;
         }
-
-    }while(opcao != 3);
+    }while(opcao != 5);
     return(0);
 }

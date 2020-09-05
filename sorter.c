@@ -33,19 +33,7 @@ void enQueue(qu* q, char *newItem, int priorItem){
   }
 }
 
-void listarAlunos(char *url){
-  FILE *listaAlunos;
-  char nome[MAX];
-  listaAlunos = fopen(url,"r");
-  printf("\nAlunos\n\n");
-  while((fgets(nome, sizeof(nome),listaAlunos))!=NULL)
-    printf("%s\n",nome);
 
-  printf("\n");
-  sleep(5);
-  system("clear");
-  fclose(listaAlunos);
-}
 
 void sortearGrupos(char *urlArquivo, qu *listaAlunos){
   FILE *arq = fopen(urlArquivo, "r");
