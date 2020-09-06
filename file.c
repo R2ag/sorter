@@ -58,9 +58,10 @@ int validador(FILE *arq){
 
 void listarAlunos(FILE *arq){
     char nome[MAX];
-    int cont = 0;
-    while((fgets(nome, sizeof(nome),listaAlunos))!=NULL){
-            printAluno(nome, cont);
-            cont++;
+    int cont = 1;
+    fseek(arq, 3, SEEK_SET);
+    while(fscanf(arq, "%s\n",nome)){
+        printAluno(nome, cont);
+        cont++;
     }
 }
