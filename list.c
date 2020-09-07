@@ -23,3 +23,12 @@ void insertEnd(node *n, char *info){
     strcpy(newNode->info, info);
     newNode->next = NULL;
 }
+
+void listarAlunos(bufferNames){
+    int cont = 0;
+    do {
+        printAluno(bufferNames->info, cont);
+        cont++;
+        bufferNames = bufferNames->next;
+    } while(bufferNames->next != NULL);
+}

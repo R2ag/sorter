@@ -20,5 +20,8 @@ void createNode(node *n);
 void startList(node *n);
 
 //A função insertEnd insere um novo nó no final da lista
-void insertEnd(node *n, char *info)
+void insertEnd(node *n, char *info);
+
+//Função para listar os alunos carregados do arquivo.
+void listarAlunos(bufferNames);
 #endif

@@ -28,7 +28,7 @@ int main(){
                 arq = openFile(bufferNames, bufferQtdAlunos, bufferFlag);
                 break;
             case 2:
-                listarAlunos(arq);
+                listarAlunos(bufferNames);
                 break;
             case 3:
 
