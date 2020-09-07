@@ -23,7 +23,7 @@ int menu(){
 
 void nameFile(char *url){
   printf("Digite o Nome do Arquivo com a lista de alunos: ");
-  scanf("%[^\n]s", url);
+  scanf("%s", url);
 }
 
 void statusArquivo(int op){
@@ -39,21 +39,23 @@ void statusArquivo(int op){
 }
 
 void statusLayout(int op){
-    switch (op){
-        case 0:
-            printf("O arquivo carregado atende as especificacoes!\n");
-            printf("Digite o endereco de um arquivo que atenda as especificacoes.\n");
-        case 1:
-            printf("O Arquivo nao atende as especificacoes desejadas!\n");
-            printf("Valor Invalido para quantidade de alunos por grupo.\n");
-        case 2:
-            printf("O Arquivo nao atende as especificacoes desejadas!\n");
-            printf("Opcao invalida para formato dos grupos.\n");
-        case 3:
-            printf("O Arquivo nao atende as especificacoes desejadas!\n");
-            printf("O arquivo não possui alunos cadastrados.\n");
-        default:
-            printf("Erro desconhecido!\n");
+    if(op == 0)
+        printf("O arquivo carregado atende as especificacoes!\n");
+        return;
+
+    if (op >= 100){
+        printf("O Arquivo nao atende as especificacoes desejadas!\n");
+        printf("O arquivo não possui alunos cadastrados.\n");
+        op = op%100;
+    }
+    if (op >= 10) {
+        printf("O Arquivo nao atende as especificacoes desejadas!\n");
+        printf("Opcao invalida para formato dos grupos.\n");
+        op = op%10;
+    }
+    if (op>=1) {
+        printf("O Arquivo nao atende as especificacoes desejadas!\n");
+        printf("Valor Invalido para quantidade de alunos por grupo.\n");
     }
 }
 
@@ -62,6 +64,15 @@ void printAluno(char *name, int cont){
         printf("LISTAGEM DE ALUNOS\n\n");
     printf("%d - %s\n", cont+1, name);
 }
-void alerta(){
-    printf("Funcao nao habilitada no momento. favor, carregue o arquivo antes de prosseguir.\n");
+
+void alerta(int op){
+    switch (op) {
+        case 1:
+            printf("Funcao nao habilitada no momento. favor, carregue o arquivo antes de prosseguir.\n");
+            break;
+        case 2:
+            printf("Funcao invalida! favor, escolha uma funcao valida.\n");
+            break;
+    }
+
 }

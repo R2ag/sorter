@@ -9,11 +9,7 @@
 //Define a constante MAX como 52. Essa constante é utilizada na criação de strings
 #define MAX 52
 
-/*Estrutura usada para armazenar as informações do aluno*/
-typedef struct Data {
-    char name[MAX];
-    int order;
-}data;
+
 
 
 

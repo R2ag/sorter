@@ -5,20 +5,27 @@
 
 int main(){
     //Inicia a BST
-    node *n;
-    createNode(n);
+    node *bufferNames;
+    createNode(bufferNames);
+    startList(bufferNames);
+    int bufferQtdAlunos;
+    int bufferFlag;
+    int arquivoValido 0;
+
     int opcao;
-    int arquivoValido = 0; //Flag para definir se o arquivo com os alunos está carregado e é valido para a execução
     FILE *arq;
     do{
-        opcao = menu(arquivoValido);
-        if (arquivoValido == 0 && (opcao != 1 && opcao != 5)) {
-            alerta();
+        opcao = menu();
+        if (arquivoValido == 0 && (opcao > 2 && opcao < 5)) {
+            alerta(1);
             opcao = 0;
+        }
+        if (opcao < 1 || opcao > 5){
+            alerta(2);
         }
         switch(opcao){
             case 1:
-                arq = openFile();
+                arq = openFile(bufferNames, bufferQtdAlunos, bufferFlag);
                 break;
             case 2:
                 listarAlunos(arq);
