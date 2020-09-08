@@ -4,16 +4,22 @@
 #include "file.h"
 
 int main(){
+    //Configuração de linguagem
+    setlocale(LC_ALL, "Portuguese");
     //Inicia a BST
+
+    structureContainer fileContent;
     node *bufferNames;
-    createNode(bufferNames);
-    startList(bufferNames);
+
+
     int bufferQtdAlunos;
     int bufferFlag;
+    
     int arquivoValido 0;
 
     int opcao;
     FILE *arq;
+
     do{
         opcao = menu();
         if (arquivoValido == 0 && (opcao > 2 && opcao < 5)) {
@@ -25,6 +31,8 @@ int main(){
         }
         switch(opcao){
             case 1:
+                createNode(bufferNames);
+                startList(bufferNames);
                 arq = openFile(bufferNames, bufferQtdAlunos, bufferFlag);
                 break;
             case 2:

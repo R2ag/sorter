@@ -9,7 +9,16 @@
 //Define a constante MAX como 52. Essa constante é utilizada na criação de strings
 #define MAX 52
 
+typedef struct structure {
+    int qtdAlunos;
+    int flag;
+    treeNode *colection;
+}structureContainer;
 
+typedef struct student{
+    char name[MAX];
+    int key;
+}typeStudent;
 
 
 
