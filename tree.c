@@ -31,15 +31,24 @@ treeNode * insertNode(treeNode *new, char *studentName, int sorterNumb){
     return new;
 }
 
-int printTree(treeNode *tree, int countNode){
+int printTree(treeNode *tree, int countNode, int qtdAlGrp, int sobraAlunos, int flag){
     if (tree->left != NULL){
         countNode = printTree(tree->left, countNode);
     }
 
     if (countNode == 0) {
-        printAluno(tree->academic.name, countNode, 1);
+        alerta(5);
     }
-    printAluno(tree->academic.name, countNode, 1);
+    if (flag == 1) {
+        if (countNode%qtdAlGrp == 0) {
+            printGroup((countNode/qtdAlGrp)+1);
+        }
+    }else{
+        if (countNode == 0 || ((countNode - 1)%qtdAlGrp == 0 && countNode != 0){
+            printGroup((countNode/qtdAlGrp)+1);
+        }
+    }
+    printAluno(tree->academic.name);
     countNode++;
 
     if (tree->right != NULL){

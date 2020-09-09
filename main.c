@@ -2,6 +2,7 @@
 #include "sorter.h"
 #include "interface.h"
 #include "file.h"
+#include "tree.h"
 
 int main(){
     //Configuração de linguagem

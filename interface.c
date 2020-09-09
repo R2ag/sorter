@@ -60,19 +60,13 @@ void statusLayout(int op){
     }
 }
 
-void printAluno(char *name, int cont, int flagOrigem){
-    if (flagOrigem == 0 )
-        printf("LISTAGEM DE ALUNOS\n\n");
-
-    if (flagOrigem == 1 ){
-        printf("LISTAGEM DE GRUPOS\n\n");
-    }
-    if (flagOrigem >= 1){
-        printf("Grupo %d\n", flagOrigem);
-    }
-    printf("%d - %s\n", cont+1, name);
+void printAluno(char *name){
+    printf("%d - %s\n", name);
 }
 
+void printGroup(int idGroup){
+    printf("Grupo %d\n",idGroup );
+}
 
 void alerta(int op){
     switch (op) {
@@ -84,6 +78,12 @@ void alerta(int op){
             break;
         case 3:
             printf("Grupos Sorteados com sucesso!\n");
+            break;
+        case 4:
+            printf("LISTAGEM DE ALUNOS\n\n");
+            break;
+        case 5:
+            printf("LISTAGEM DE GRUPOS\n\n");
             break;
     }
 
