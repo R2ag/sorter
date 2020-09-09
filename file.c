@@ -63,6 +63,8 @@ void gerarRelatorio(structureContainer info){
     }
     printCabecalho(relatorio);
 
+    teste
+
 }
 
 
