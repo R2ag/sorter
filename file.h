@@ -2,10 +2,10 @@
 #define _FILE_H
 
 //Função que abre o arquivo de texto.
-void openFile(buff *bfNms, int *bfQtdAln, int *bffFlg);
+void openFile(buff *bfNms, int *bfQtdAln, int *bffFlg, int *count);
 
 //Função para verificar se o arquivo é valido para a aplicação.
-int validador(FILE *arq);
+int validador(FILE *arq, node *bfNms, int *bfQtdAln, int *bffFlg, int *cont);
 /*
 Para ser valido para a execução, o arquivo deve atender as seguintes especificacoes:
     1 - A primeira linha deve ter um numero inteiro indicando a quantidade de alunos presentes na turma;

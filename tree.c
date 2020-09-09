@@ -30,3 +30,21 @@ treeNode * insertNode(treeNode *new, char *studentName, int sorterNumb){
     }
     return new;
 }
+
+int printTree(treeNode *tree, int countNode){
+    if (tree->left != NULL){
+        countNode = printTree(tree->left, countNode);
+    }
+
+    if (countNode == 0) {
+        printAluno(tree->academic.name, countNode, 1);
+    }
+    printAluno(tree->academic.name, countNode, 1);
+    countNode++;
+
+    if (tree->right != NULL){
+        countNode = rintTree(tree->right, countNode);
+    }
+
+    return countNode;
+}

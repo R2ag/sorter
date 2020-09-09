@@ -14,8 +14,18 @@ void groupSort(treeNode *buffer, node *bffNames){
     srand(time(NULL));
     while (bffNames->next != NULL){
         sorterKey = rand()%1000;
-        insertNode(buffer, bffNames->info, sorterKey);
+        buffer = insertNode(buffer, bffNames->info, sorterKey);
         bffNames = bffNames->next;
+    }
+    alerta(3);
+}
+
+void printGroup(structureContainer *turma){
+    int qtdGrupos = turma.qtdAlunos/turma.qtdAlnGrupos;
+    int alunsSobrando = turma.qtdAlunos % turma.qtdAlnGrupos;
+
+    if (alunsSobrando > 0 && turma.flag == 1){
+        qtdGrupos++;
     }
 }
 
@@ -23,39 +33,6 @@ void groupSort(treeNode *buffer, node *bffNames){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//Funções a serem modificadas.
-void enQueue(qu* q, char *newItem, int priorItem){
-  int i = q->rear;
-	int iAnterior;
-  if(isFull(q)){
-    printf("A fila esta cheia!!!");
-  }else{
-    strcpy(q->estudante[i].nome, newItem);
-    q->prior[i] = priorItem;
-		iAnterior = (i == 0)? MAX - 1: i -1;
-		while(i != (q->front) && priorItem > q->prior[iAnterior]){
-      strcpy(q->estudante[i].nome, q->estudante[iAnterior].nome);
-      strcpy(q->estudante[iAnterior].nome, newItem);
-			q->prior[i] = q->prior[iAnterior];
-			q->prior[iAnterior] = priorItem;
-			i = (i == -1)? MAX - 1:i - 1;
-			iAnterior = (i == 0)? MAX - 1: i -1;
-		}
-		q->rear = (q->rear +1) % MAX;
-
-  }
-}
 
 
 

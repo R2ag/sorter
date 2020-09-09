@@ -11,6 +11,7 @@
 
 typedef struct structure {
     int qtdAlunos;
+    int qtdAlunosGrupos;
     int flag;
     treeNode *colection;
 }structureContainer;

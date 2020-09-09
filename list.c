@@ -27,7 +27,11 @@ void insertEnd(node *n, char *info){
 void listarAlunos(bufferNames){
     int cont = 0;
     do {
-        printAluno(bufferNames->info, cont);
+        if (cont == 0) {
+            printAluno(bufferNames->info, cont, 0);
+        }else{
+            printAluno(bufferNames->info, cont, -1);
+        }
         cont++;
         bufferNames = bufferNames->next;
     } while(bufferNames->next != NULL);

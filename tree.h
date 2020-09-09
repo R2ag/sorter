@@ -14,4 +14,5 @@ typedef struct tree{
 treeNode * createLeaf();
 void startLeaf(treeNode *new);
 treeNode * insertNode(treeNode *new, char *studentName, int sorterNumb);
+int printTree(treeNode *tree);
 #endif

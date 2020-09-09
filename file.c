@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void openFile(node *bfNms, int *bfQtdAln, int *bffFlg){
+void openFile(node *bfNms, int *bfQtdAln, int *bffFlg, int *count){
     FILE *arquivo;
     char urlArquivo[MAX];
     int flagArquivoLocalizado;
@@ -31,8 +31,8 @@ void openFile(node *bfNms, int *bfQtdAln, int *bffFlg){
 }
 
 //Não terminado
-int validador(FILE *arq, node *bfNms, int *bfQtdAln, int *bffFlg){
-    int cont = 0;
+int validador(FILE *arq, node *bfNms, int *bfQtdAln, int *bffFlg, int *cont){
+    cont = 0;
     int flagControll = 0;
     char name[MAX];
 
@@ -49,7 +49,7 @@ int validador(FILE *arq, node *bfNms, int *bfQtdAln, int *bffFlg){
     if(flagGrupos < 0 && flagGrupos > 1){
         flagControll = 10;
     }
-    if(cont > 0){
+    if(cont < 0){
         flagControll = 100;
     }
     return flagControll;

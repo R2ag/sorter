@@ -13,11 +13,12 @@ int menu(){
         printf("1 - Carregar Arquivo\n");
         printf("2 - Listar Alunos\n");
         printf("3 - Sortear os grupos\n");
-        printf("4 - Gerar Relatório\n");
-        printf("5 - Sair\n");
+        printf("4 - Imprimir Grupos\n");
+        printf("5 - Gerar Relatório\n");
+        printf("6 - Sair\n");
         scanf("%d", &opcao);
         system('clear');
-    }while(opcao<1 || opcao>5);
+    }while(opcao<1 || opcao>6);
     return(opcao);
 }
 
@@ -59,11 +60,19 @@ void statusLayout(int op){
     }
 }
 
-void printAluno(char *name, int cont){
-    if (cont == 0)
+void printAluno(char *name, int cont, int flagOrigem){
+    if (flagOrigem == 0 )
         printf("LISTAGEM DE ALUNOS\n\n");
+
+    if (flagOrigem == 1 ){
+        printf("LISTAGEM DE GRUPOS\n\n");
+    }
+    if (flagOrigem >= 1){
+        printf("Grupo %d\n", flagOrigem);
+    }
     printf("%d - %s\n", cont+1, name);
 }
+
 
 void alerta(int op){
     switch (op) {
@@ -72,6 +81,9 @@ void alerta(int op){
             break;
         case 2:
             printf("Funcao invalida! favor, escolha uma funcao valida.\n");
+            break;
+        case 3:
+            printf("Grupos Sorteados com sucesso!\n");
             break;
     }
 
