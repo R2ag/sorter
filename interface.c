@@ -85,6 +85,9 @@ void alerta(int op){
         case 5:
             printf("LISTAGEM DE GRUPOS\n\n");
             break;
+        case 6:
+            printf("Não foi possivel gerar o relatorio!\n\n");
+            break;
     }
 
 }

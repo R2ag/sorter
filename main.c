@@ -12,7 +12,6 @@ int main(){
     structureContainer fileContent;
     node *bufferNames;
 
-
     int bufferQtdAlunos;
     int bufferFlag;
     int countAlunos;
@@ -50,6 +49,7 @@ int main(){
                 printGroup(fileContent);
                 break;
             case 5:
+                gerarRelatorio(fileContent);
                 break;
 
             case 6:

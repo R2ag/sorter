@@ -54,3 +54,19 @@ int validador(FILE *arq, node *bfNms, int *bfQtdAln, int *bffFlg, int *cont){
     }
     return flagControll;
 }
+
+void gerarRelatorio(structureContainer info){
+    FILE *relatorio = fopen("relatorio.txt", wf)
+    if (relatorio == NULL){
+        alerta(6);
+        return;
+    }
+    printCabecalho(relatorio);
+
+}
+
+
+
+void fileWrite(FILE *arq){
+    fprintf(arquivo, "%s\n");
+}
