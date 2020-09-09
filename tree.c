@@ -43,8 +43,12 @@ int printTree(treeNode *tree, int countNode, int qtdAlGrp, int sobraAlunos, int 
         if (countNode%qtdAlGrp == 0) {
             printGroup((countNode/qtdAlGrp)+1);
         }
-    }else{
-        if (countNode == 0 || ((countNode - 1)%qtdAlGrp == 0 && countNode != 0){
+    }else if (flag == 0){
+        if(sobraAlunos >= (countNode/qtdAlGrp+1)){
+            if (countNode == 0 || (countNode%(qtdAlGrp+1) == 0 && countNode != 0){
+                printGroup((countNode/qtdAlGrp)+1);
+            }
+        }else if ((countNode-sobraAlunos)%qtdAlGrp == 0){
             printGroup((countNode/qtdAlGrp)+1);
         }
     }
