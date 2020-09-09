@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-FILE *openFile(node *bfNms, int *bfQtdAln, int *bffFlg){
+void openFile(node *bfNms, int *bfQtdAln, int *bffFlg){
     FILE *arquivo;
     char urlArquivo[MAX];
     int flagArquivoLocalizado;
@@ -24,10 +24,10 @@ FILE *openFile(node *bfNms, int *bfQtdAln, int *bffFlg){
 
         flagArquivoValido = validador(arquivo, bfNms, bfQtdAln, bffFlg);
         statusLayout(flagArquivoValido);
-        
+
     } while(flagArquivoLocalizado != 0 || flagArquivoValido != 0);
 
-    return arquivo;
+    fclose(arquivo);
 }
 
 //Não terminado

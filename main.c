@@ -14,11 +14,11 @@ int main(){
 
     int bufferQtdAlunos;
     int bufferFlag;
-    
+
     int arquivoValido 0;
 
     int opcao;
-    FILE *arq;
+
 
     do{
         opcao = menu();
@@ -33,13 +33,15 @@ int main(){
             case 1:
                 createNode(bufferNames);
                 startList(bufferNames);
-                arq = openFile(bufferNames, bufferQtdAlunos, bufferFlag);
+                openFile(bufferNames, bufferQtdAlunos, bufferFlag);
                 break;
             case 2:
                 listarAlunos(bufferNames);
                 break;
             case 3:
-
+                fileContent.flag = bufferFlag;
+                fileContent.qtdAlunos = bufferQtdAlunos;
+                groupSort(structureContainer->colection, bufferNames);
                 break;
             case 4:
 

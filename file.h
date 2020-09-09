@@ -2,7 +2,7 @@
 #define _FILE_H
 
 //Função que abre o arquivo de texto.
-FILE *openFile(buff *bfNms, int *bfQtdAln, int *bffFlg);
+void openFile(buff *bfNms, int *bfQtdAln, int *bffFlg);
 
 //Função para verificar se o arquivo é valido para a aplicação.
 int validador(FILE *arq);

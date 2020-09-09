@@ -20,6 +20,8 @@ typedef struct student{
     int key;
 }typeStudent;
 
+void groupSort(structureContainer *buffer, node *BffNames);
+
 
 
 

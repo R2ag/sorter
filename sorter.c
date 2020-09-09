@@ -9,6 +9,30 @@
 #include <stdlib.h>
 #include <string.h>
 
+void groupSort(treeNode *buffer, node *bffNames){
+    int sorterKey;
+    srand(time(NULL));
+    while (bffNames->next != NULL){
+        sorterKey = rand()%1000;
+        insertNode(buffer, bffNames->info, sorterKey);
+        bffNames = bffNames->next;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Funções a serem modificadas.
 void enQueue(qu* q, char *newItem, int priorItem){
