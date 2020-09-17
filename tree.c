@@ -31,32 +31,53 @@ treeNode * insertNode(treeNode *new, char *studentName, int sorterNumb){
     return new;
 }
 
-int printTree(treeNode *tree, int countNode, int qtdAlGrp, int sobraAlunos, int flag){
+int climbTree(treeNode *tree, int countNode, int qtdAlGrp, int sobraAlunos, int flag, int flagDestino){
+
     if (tree->left != NULL){
-        countNode = printTree(tree->left, countNode);
+        countNode = climbTree(tree->left, countNode, qtdAlGrp, sobraAlunos, flag, flagDestino);
     }
 
     if (countNode == 0) {
         alerta(5);
     }
+
     if (flag == 1) {
         if (countNode%qtdAlGrp == 0) {
-            printGroup((countNode/qtdAlGrp)+1);
+            if (flagDestino == 0) {
+                printGroup((countNode/qtdAlGrp)+1);
+            }else if (flagDestino == 1) {
+                writeGroup((countNode/qtdAlGrp)+1);
+            }
         }
     }else if (flag == 0){
         if(sobraAlunos >= (countNode/qtdAlGrp+1)){
             if (countNode == 0 || (countNode%(qtdAlGrp+1) == 0 && countNode != 0){
-                printGroup((countNode/qtdAlGrp)+1);
+                if (flagDestino == 0) {
+                    printGroup((countNode/qtdAlGrp)+1);
+                }else if (flagDestino == 1) {
+                    writeGroup((countNode/qtdAlGrp)+1);
+                }
+
             }
         }else if ((countNode-sobraAlunos)%qtdAlGrp == 0){
-            printGroup((countNode/qtdAlGrp)+1);
+            if (flagDestino == 0){
+                printGroup((countNode/qtdAlGrp)+1);
+            }else if(flagDestino == 1){
+                writeGroup((countNode/qtdAlGrp)+1);
+            }
         }
     }
-    printAluno(tree->academic.name);
+    if (flagDestino == 0){
+        printAluno(tree->academic.name);
+    }else if (flagDestino == 1) {
+        writeAluno(tree->academic.name);
+    }
+
+
     countNode++;
 
     if (tree->right != NULL){
-        countNode = rintTree(tree->right, countNode);
+        countNode = climbTree(tree->right, countNode, qtdAlGrp, sobraAlunos, flag, flagDestino);
     }
 
     return countNode;

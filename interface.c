@@ -18,6 +18,9 @@ int menu(){
         printf("6 - Sair\n");
         scanf("%d", &opcao);
         system('clear');
+        if (opcao < 1 || opcao > 6){
+            alerta(2);
+        }
     }while(opcao<1 || opcao>6);
     return(opcao);
 }

@@ -27,9 +27,7 @@ int main(){
             alerta(1);
             opcao = 0;
         }
-        if (opcao < 1 || opcao > 6){
-            alerta(2);
-        }
+
         switch(opcao){
             case 1:
                 createNode(bufferNames);

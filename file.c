@@ -61,14 +61,20 @@ void gerarRelatorio(structureContainer info){
         alerta(6);
         return;
     }
-    printCabecalho(relatorio);
+    fileWrite(relatorio);
+    int n = climbTree(infotree->left, countNode, qtdAlGrp, sobraAlunos, flag, flagDestino);
 
-    teste
 
 }
 
-
-
 void fileWrite(FILE *arq){
-    fprintf(arquivo, "%s\n");
+    fprintf(arq, "-----------------------------------------------------\n");
+    fprintf(arq, "BSI - ED 2020-1 Equipe 1 - Antonielly, Mario & Rafael\n");
+    fprintf(arq, "Relação de grupos aleatórios com 2 elementos\n");
+    fprintf(arq, "-----------------------------------------------------\n");
+
+}
+
+void writeGroup(int n){
+
 }
